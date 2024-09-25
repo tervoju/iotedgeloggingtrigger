@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "IOT_HUB_CONNECTION_SAS": "GMKFDq...",
+    "IOT_HUB_NAME": "iothub...",
+    "BLOB_SAS": "https://<yourblobname>.blob.core.windows.net/edgelogs?sp=racw&st=2024-09-13T06:43:26Z&se=2024-11-08T15:43:26Z&spr=https&sv=2022-11-02&sr=c&sig=QNb....",
+    "SUBSCRIPTION_ID": "ae92e392-3813-45dd-9c54-.....",
+    "RESOURCE_GROUP": "rg-iotopc-..."
+  }
+}

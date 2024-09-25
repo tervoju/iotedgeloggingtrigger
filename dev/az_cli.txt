@@ -1,0 +1,15 @@
+az iot hub invoke-module-method --method-name 'GetModuleLogs' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload '
+    {
+       "schemaVersion": "1.0",
+       "items": [
+          {
+             "id": "edgeAgent",
+             "filter": {
+                "tail": 10
+             }
+          }
+       ],
+       "encoding": "none",
+       "contentType": "text"
+    }
+'

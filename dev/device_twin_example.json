@@ -1,0 +1,26 @@
+{
+    "additional_properties": {
+        "modelId": ""
+    },
+    "device_id": "devarcedge01",
+    "module_id": None,
+    "tags": {
+        "logging": "on",
+        "type": "arc_and_edge"
+    },
+    "properties": "<azure.iot.hub.protocol.models.twin_properties_py3.TwinProperties object at 0x7f364baf1c00>",
+    "etag": "AAAAAAAAAAM=",
+    "version": 4,
+    "device_etag": "NzkwNTg0Njcx",
+    "status": "enabled",
+    "status_reason": None,
+    "status_update_time": datetime.datetime(2024, 9, 13, 6, 56, 48,938812, tzinfo="<isodate.tzinfo.Utc object at 0x7f364bccb070>"),
+    "connection_state": "Connected",
+    "last_activity_time": datetime.datetime(2024, 9,5, 11, 28, 54, 577524, tzinfo="<isodate.tzinfo.Utc object at 0x7f364bccb070>"),
+    "cloud_to_device_message_count": 0,
+    "authentication_type": "sas",
+    "x509_thumbprint": None,
+    "capabilities": "<azure.iot.hub.protocol.models.device_capabilities_py3.DeviceCapabilities object at 0x7f364baf3100>",
+    "device_scope": "ms-azure-iot-edge: //devarcedge01-638485116000191799",
+    "parent_scopes": None
+}
