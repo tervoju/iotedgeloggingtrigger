@@ -1,0 +1,857 @@
+[
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "2024-09-25 10:44:54  Starting Edge Agent",
+        "timestamp": "2024-09-25T10:44:54.9444548+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "2024-09-25 10:44:54  Changing ownership of storage folder: /tmp/edgeAgent to 13622",
+        "timestamp": "2024-09-25T10:44:54.9616227+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "2024-09-25 10:44:54  Changing ownership of backup folder: /tmp/edgeAgent_backup to 13622",
+        "timestamp": "2024-09-25T10:44:54.9695281+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "2024-09-25 10:44:54  Changing ownership of management socket: /var/run/iotedge/mgmt.sock",
+        "timestamp": "2024-09-25T10:44:54.9709027+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "2024-09-25 10:44:54  Completed necessary setup. Starting Edge Agent.",
+        "timestamp": "2024-09-25T10:44:54.9756605+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "Edge Agent Main()",
+        "timestamp": "2024-09-25T10:44:55.2631366+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Initializing Edge Agent.",
+        "timestamp": "2024-09-25T10:44:55.4823719+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Version - 1.5.4.96491519 (e6efc9518d0372cced1603b5dd2e56214ff97a7d)",
+        "timestamp": "2024-09-25T10:44:55.6240211+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - ",
+        "timestamp": "2024-09-25T10:44:55.6241322+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "█████╗ ███████╗██╗   ██╗██████╗ ███████╗",
+        "timestamp": "2024-09-25T10:44:55.6241389+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "██╔══██╗╚══███╔╝██║   ██║██╔══██╗██╔════╝",
+        "timestamp": "2024-09-25T10:44:55.6241417+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "███████║  ███╔╝ ██║   ██║██████╔╝█████╗",
+        "timestamp": "2024-09-25T10:44:55.6241438+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "██╔══██║ ███╔╝  ██║   ██║██╔══██╗██╔══╝",
+        "timestamp": "2024-09-25T10:44:55.6241462+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "██║  ██║███████╗╚██████╔╝██║  ██║███████╗",
+        "timestamp": "2024-09-25T10:44:55.6241487+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝",
+        "timestamp": "2024-09-25T10:44:55.6241509+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "2024-09-25T10:44:55.624152927Z \n",
+        "timestamp": "2024-09-25T10:44:55.6241529+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "██╗ ██████╗ ████████╗    ███████╗██████╗  ██████╗ ███████╗",
+        "timestamp": "2024-09-25T10:44:55.6241551+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "██║██╔═══██╗╚══██╔══╝    ██╔════╝██╔══██╗██╔════╝ ██╔════╝",
+        "timestamp": "2024-09-25T10:44:55.6241591+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "██║██║   ██║   ██║       █████╗  ██║  ██║██║  ███╗█████╗",
+        "timestamp": "2024-09-25T10:44:55.6241621+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "██║██║   ██║   ██║       ██╔══╝  ██║  ██║██║   ██║██╔══╝",
+        "timestamp": "2024-09-25T10:44:55.624165+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "██║╚██████╔╝   ██║       ███████╗██████╔╝╚██████╔╝███████╗",
+        "timestamp": "2024-09-25T10:44:55.6241674+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "╚═╝ ╚═════╝    ╚═╝       ╚══════╝╚═════╝  ╚═════╝ ╚══════╝",
+        "timestamp": "2024-09-25T10:44:55.62417+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "2024-09-25T10:44:55.624172418Z \n",
+        "timestamp": "2024-09-25T10:44:55.6241724+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - ModuleUpdateMode: NonBlocking",
+        "timestamp": "2024-09-25T10:44:55.6312566+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Experimental features configuration: {\"Enabled\":false,\"DisableCloudSubscriptions\":false}",
+        "timestamp": "2024-09-25T10:44:55.6859533+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Installing certificates [CN=aziot-edge CA devnuc_01:11/03/2024 06:49:53] to Root",
+        "timestamp": "2024-09-25T10:44:55.8710975+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Starting metrics listener on Host: *, Port: 9600, Suffix: metrics",
+        "timestamp": "2024-09-25T10:44:56.0941204+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Updating performance metrics every 05m:00s",
+        "timestamp": "2024-09-25T10:44:56.1066401+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Started operation Get system resources",
+        "timestamp": "2024-09-25T10:44:56.1087425+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Collecting metadata metrics",
+        "timestamp": "2024-09-25T10:44:56.110174+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Set metadata metrics: 1.5.4.96491519 (e6efc9518d0372cced1603b5dd2e56214ff97a7d), {\"Enabled\":false,\"DisableCloudSubscriptions\":false}, {\"OperatingSystemType\":\"Linux\",\"Architecture\":\"x86_64\",\"Version\":\"1.5.10\",\"Provisioning\":{\"Type\":\"ProvisioningType\",\"DynamicReprovisioning\":false,\"AlwaysReprovisionOnStartup\":false},\"ServerVersion\":\"27.0.3-1\",\"KernelVersion\":\"#45~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep 11 15:25:05 UTC 2\",\"OperatingSystem\":\"ubuntu\",\"NumCpus\":4,\"TotalMemory\":8206954496,\"Virtualized\":\"no\"}, True",
+        "timestamp": "2024-09-25T10:44:56.187036+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Started operation Checkpoint Availability",
+        "timestamp": "2024-09-25T10:44:56.207743+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Started operation refresh twin config",
+        "timestamp": "2024-09-25T10:44:56.2178218+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Edge agent attempting to connect to IoT Hub via Amqp_Tcp_Only...",
+        "timestamp": "2024-09-25T10:44:56.2511832+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Created persistent store at /tmp/edgeAgent",
+        "timestamp": "2024-09-25T10:44:56.7209424+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Started operation Metrics Scrape",
+        "timestamp": "2024-09-25T10:44:56.7921779+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Started operation Metrics Upload",
+        "timestamp": "2024-09-25T10:44:56.7922455+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "Scraping frequency: 01:00:00",
+        "timestamp": "2024-09-25T10:44:56.7944043+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "Upload Frequency: 1.00:00:00",
+        "timestamp": "2024-09-25T10:44:56.7944154+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Registering request handler UploadModuleLogs",
+        "timestamp": "2024-09-25T10:44:57.2150448+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Registering request handler GetModuleLogs",
+        "timestamp": "2024-09-25T10:44:57.215182+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Registering request handler UploadSupportBundle",
+        "timestamp": "2024-09-25T10:44:57.2153173+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Registering request handler RestartModule",
+        "timestamp": "2024-09-25T10:44:57.2154739+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Edge agent connected to IoT Hub via Amqp_Tcp_Only.",
+        "timestamp": "2024-09-25T10:44:57.6703047+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Initialized new module client with subscriptions enabled",
+        "timestamp": "2024-09-25T10:44:57.8495269+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Obtained Edge agent twin from IoTHub with desired properties version 39 and reported properties version 226.",
+        "timestamp": "2024-09-25T10:44:57.9381204+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Module 'twinconfigmodule' scheduled to restart after 10s (04s left).",
+        "timestamp": "2024-09-25T10:44:58.1051291+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Module 'edgeHub' scheduled to restart after 10s (04s left).",
+        "timestamp": "2024-09-25T10:44:58.105146+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Updated reported properties",
+        "timestamp": "2024-09-25T10:44:58.354834+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Plan execution started for deployment 39",
+        "timestamp": "2024-09-25T10:45:03.4374189+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Command Group: (\\n  [Stop module twinconfigmodule]\\n  [Start module twinconfigmodule]\\n  [Saving twinconfigmodule to store]\\n)\"",
+        "timestamp": "2024-09-25T10:45:03.4581568+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Stop module twinconfigmodule\"",
+        "timestamp": "2024-09-25T10:45:03.4581839+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Start module twinconfigmodule\"",
+        "timestamp": "2024-09-25T10:45:03.4961838+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Saving twinconfigmodule to store\"",
+        "timestamp": "2024-09-25T10:45:04.2646687+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Command Group: (\\n  [Stop module edgeHub]\\n  [Start module edgeHub]\\n  [Saving edgeHub to store]\\n)\"",
+        "timestamp": "2024-09-25T10:45:04.2793901+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Stop module edgeHub\"",
+        "timestamp": "2024-09-25T10:45:04.280552+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Start module edgeHub\"",
+        "timestamp": "2024-09-25T10:45:04.2860217+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Saving edgeHub to store\"",
+        "timestamp": "2024-09-25T10:45:05.8696926+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Plan execution ended for deployment 39",
+        "timestamp": "2024-09-25T10:45:05.8961111+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Module 'twinconfigmodule' scheduled to restart after 20s (16s left).",
+        "timestamp": "2024-09-25T10:45:11.0802663+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Updated reported properties",
+        "timestamp": "2024-09-25T10:45:11.283332+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Module 'twinconfigmodule' scheduled to restart after 20s (10s left).",
+        "timestamp": "2024-09-25T10:45:16.729984+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Module 'twinconfigmodule' scheduled to restart after 20s (05s left).",
+        "timestamp": "2024-09-25T10:45:21.7441127+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Module 'twinconfigmodule' scheduled to restart after 20s (00s left).",
+        "timestamp": "2024-09-25T10:45:26.7519673+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Plan execution started for deployment 39",
+        "timestamp": "2024-09-25T10:45:31.7676372+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Command Group: (\\n  [Stop module twinconfigmodule]\\n  [Start module twinconfigmodule]\\n  [Saving twinconfigmodule to store]\\n)\"",
+        "timestamp": "2024-09-25T10:45:31.767905+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Stop module twinconfigmodule\"",
+        "timestamp": "2024-09-25T10:45:31.7679145+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Start module twinconfigmodule\"",
+        "timestamp": "2024-09-25T10:45:31.769608+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Executing command: \"Saving twinconfigmodule to store\"",
+        "timestamp": "2024-09-25T10:45:32.0537374+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Plan execution ended for deployment 39",
+        "timestamp": "2024-09-25T10:45:32.0542544+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Received direct method call - UploadModuleLogs",
+        "timestamp": "2024-09-25T10:45:32.1215359+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Received request UploadModuleLogs with payload",
+        "timestamp": "2024-09-25T10:45:32.1226967+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Processing request to upload logs for {\"schemaVersion\":\"1.0\",\"items\":[{\"id\":\"edgeAgent\",\"filter\":{\"tail\":100,\"since\":\"0 days 15 minutes\",\"until\":null,\"loglevel\":6,\"regex\":\".*\"}},{\"id\":\"edgeHub\",\"filter\":{\"tail\":100,\"since\":\"0 days 15 minutes\",\"until\":null,\"loglevel\":6,\"regex\":\".*\"}}],\"encoding\":0,\"contentType\":0}",
+        "timestamp": "2024-09-25T10:45:32.1456088+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Successfully handled request UploadModuleLogs",
+        "timestamp": "2024-09-25T10:45:32.1624103+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Initiating streaming logs for edgeAgent",
+        "timestamp": "2024-09-25T10:45:32.1705053+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Initiating streaming logs for edgeHub",
+        "timestamp": "2024-09-25T10:45:32.1731086+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Uploading blob iothubtervo01.azure-devices.net/devarcedge01/edgeAgent-2024-09-25--10-45-32.json to container edgelogs",
+        "timestamp": "2024-09-25T10:45:32.352761+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Uploading blob iothubtervo01.azure-devices.net/devarcedge01/edgeHub-2024-09-25--10-45-32.json to container edgelogs",
+        "timestamp": "2024-09-25T10:45:32.352782+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Finished uploading logs for module edgeAgent",
+        "timestamp": "2024-09-25T10:45:32.7908806+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Finished uploading logs for module edgeHub",
+        "timestamp": "2024-09-25T10:45:32.7909029+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Updated reported properties",
+        "timestamp": "2024-09-25T10:45:37.2403811+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Received direct method call - UploadModuleLogs",
+        "timestamp": "2024-09-25T10:46:33.5163004+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Received request UploadModuleLogs with payload",
+        "timestamp": "2024-09-25T10:46:33.5164347+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Processing request to upload logs for {\"schemaVersion\":\"1.0\",\"items\":[{\"id\":\"edgeAgent\",\"filter\":{\"tail\":100,\"since\":\"0 days 15 minutes\",\"until\":null,\"loglevel\":6,\"regex\":\".*\"}},{\"id\":\"edgeHub\",\"filter\":{\"tail\":100,\"since\":\"0 days 15 minutes\",\"until\":null,\"loglevel\":6,\"regex\":\".*\"}}],\"encoding\":0,\"contentType\":0}",
+        "timestamp": "2024-09-25T10:46:33.5175265+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Successfully handled request UploadModuleLogs",
+        "timestamp": "2024-09-25T10:46:33.5219434+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Initiating streaming logs for edgeAgent",
+        "timestamp": "2024-09-25T10:46:33.5253378+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Initiating streaming logs for edgeHub",
+        "timestamp": "2024-09-25T10:46:33.5263537+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Uploading blob iothubtervo01.azure-devices.net/devarcedge01/edgeAgent-2024-09-25--10-46-33.json to container edgelogs",
+        "timestamp": "2024-09-25T10:46:33.5383696+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Uploading blob iothubtervo01.azure-devices.net/devarcedge01/edgeHub-2024-09-25--10-46-33.json to container edgelogs",
+        "timestamp": "2024-09-25T10:46:33.539705+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Finished uploading logs for module edgeAgent",
+        "timestamp": "2024-09-25T10:46:33.6537989+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Finished uploading logs for module edgeHub",
+        "timestamp": "2024-09-25T10:46:33.663357+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Received direct method call - UploadModuleLogs",
+        "timestamp": "2024-09-25T10:50:31.008181+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Received request UploadModuleLogs with payload",
+        "timestamp": "2024-09-25T10:50:31.0082266+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Processing request to upload logs for {\"schemaVersion\":\"1.0\",\"items\":[{\"id\":\"edgeAgent\",\"filter\":{\"tail\":100,\"since\":\"0 days 15 minutes\",\"until\":null,\"loglevel\":6,\"regex\":\".*\"}},{\"id\":\"edgeHub\",\"filter\":{\"tail\":100,\"since\":\"0 days 15 minutes\",\"until\":null,\"loglevel\":6,\"regex\":\".*\"}}],\"encoding\":0,\"contentType\":0}",
+        "timestamp": "2024-09-25T10:50:31.0092077+00:00"
+    },
+    {
+        "iothub": "iothubtervo01.azure-devices.net",
+        "device": "devarcedge01",
+        "id": "edgeAgent",
+        "stream": "stdout",
+        "loglevel": 6,
+        "text": "[INF] - Successfully handled request UploadModuleLogs",
+        "timestamp": "2024-09-25T10:50:31.0131126+00:00"
+    }
+]
