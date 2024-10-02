@@ -5,3 +5,5 @@
 azure-functions
 azure-iot-hub
 azure-identity
+azure-storage-blob
+azure-mgmt-iothub
