@@ -7,41 +7,6 @@ from azure.mgmt.iothub import IotHubClient
 from azure.iot.hub.models import CloudToDeviceMethod
 from azure.storage.blob import BlobServiceClient, generate_container_sas, ContainerSasPermissions
 
-# Define your storage account and container details
-account_url = "https://devtwineventhandler.blob.core.windows.net/edgemodulelogs"
-container_name = "<your-container-name>"
-blob_name = "<your-blob-name>"
-
-def get_blob_sas_token(account_url, container_name, blob_name):
-    """
-    Get a SAS token for the blob.
-    """
-    # Create a BlobServiceClient using DefaultAzureCredential
-    credential = DefaultAzureCredential()
-    blob_service_client = BlobServiceClient(account_url, credential=credential)
-    container_client = blob_service_client.get_container_client(container_name)
-    blob_client = container_client.get_blob_client(blob_name)
-
-    try:
-        # Generate a user delegation SAS token for the container
-        sas_token = generate_container_sas(
-            account_name=blob_service_client.account_name,
-            container_name=container_name,
-            permission=ContainerSasPermissions(read=True, write=True, list=True),
-            expiry=datetime.datetime.utcnow() + datetime.timedelta(hours=1),
-            user_delegation_key=blob_service_client.get_user_delegation_key(
-                key_start_time=datetime.datetime.utcnow(),
-                key_expiry_time=datetime.datetime.utcnow() + datetime.timedelta(hours=1)
-            )
-        )
-        sas_url = f"{blob_client.url}?{sas_token}"
-        logging.info(f"SAS URL: {sas_url}")
-        return sas_url
-
-    except Exception as e:
-        logging.info("Error: %s", str(e))
-        return None
-
 
 def get_edge_device_modules(iot_hub_connection_string, iot_hub, device_id):
     """

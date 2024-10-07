@@ -49,7 +49,7 @@ def get_iot_hub_connection_string(iot_hub_name, subscription_id, resource_group_
         logging.error('Error getting IoT Hub connection string with default credential: %s', e)
         return None
     
-def get_blob_sas_token(account_url, container_name):
+def get_blob_sas_token(account_name, container_name):
     """
     Get a SAS token for the blob.
     """
