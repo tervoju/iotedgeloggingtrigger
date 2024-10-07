@@ -5,7 +5,7 @@ import azure.functions as func
 from azure.identity import DefaultAzureCredential
 from azure.iot.hub import IoTHubRegistryManager
 from azure.mgmt.iothub import IotHubClient
-from azure.storage.blob import BlobServiceClient, ContainerSasPermissions
+from azure.storage.blob import BlobServiceClient, generate_container_sas, ContainerSasPermissions
 from dev.dm_requests import IOT_HUB_CONNECTION_STRING
 from uploadlogs import upload_mi_module_logs_to_blob
 
@@ -38,9 +38,9 @@ def get_iot_hub_connection_string(iot_hub_name, subscription_id, resource_group_
         for policy in policies:
             if policy.key_name == 'iothubowner':
                 logging.info(f"Policy Name: {policy.key_name}")
-                logging.info(f"Primary Key: {policy.primary_key}")
-                print(f"Secondary Key: {policy.secondary_key}")
-                logging.info(f"Rights: {policy.rights}")
+                #logging.info(f"Primary Key: {policy.primary_key}")
+                #print(f"Secondary Key: {policy.secondary_key}")
+                #logging.info(f"Rights: {policy.rights}")
                 return policy.primary_key
     
         logging.error('No authorization policies found for IoT Hub: %s', iot_hub_name)
@@ -59,9 +59,6 @@ def get_blob_sas_token(account_name, container_name):
     # Generate a SAS token for the container with read permission
     # The token expires in 1 hour, and is valid for 1 minute before expiration
     # The start time is 1 minute before expiration to ensure that the token is valid for the duration of the request
-
-    # Note: Replace 'account_url' and 'container_name' with your actual blob storage account URL and container name
-
     # Generate the SAS token for the blob container
     # This token can be used to access blobs in the container with read permission
 
@@ -79,8 +76,12 @@ def get_blob_sas_token(account_name, container_name):
         # Get the container client
         container_client = blob_service_client.get_container_client(container_name)
     
+        logging.info(f"container account key: {container_client.credentials.account_key}")
         # Generate a SAS token for the blob
-        sas_token = container_client.generate_container_sas(
+        sas_token = generate_container_sas(
+            account_name=container_client.account_name,
+            container_name=container_client.container_name,
+            account_key=container_client.credential.account_key,
             permission=ContainerSasPermissions(write=True),
             expiry=datetime.now.datetime.utc() + timedelta(hours=1)
         )
@@ -116,23 +117,6 @@ def get_device_twin_tags(iot_hub_connection_string, device_id):
 
     return tags
 
-
-'''
-def device_logging_on(hubName, device_id):
-    try:
-        tags = get_device_twin_tags(hubName, device_id)
-        logging.info(f'Device twin tags: {tags}')
-
-        logging_on = tags.get("logging")
-        if logging_on == "on":
-            logging.info(f'Device logging is enabled: {device_id}')
-            return True
-        else:
-            return False
-    except Exception as e:
-        logging.error(f'Error processing device twin tags: {e}')
-        return False
-'''
 
 @app.event_grid_trigger(arg_name="azeventgrid")
 def EventGridTrigger(azeventgrid: func.EventGridEvent):
