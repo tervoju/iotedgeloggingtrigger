@@ -24,13 +24,14 @@ def get_iot_hub_connection_string(iot_hub_name, subscription_id, resource_group_
         # how to get IoT Hub connection string using Managed Identity
         client = IotHubClient(credential, subscription_id)
         # Get the IoT Hub description
-        iot_hub = client.iot_hub_resource.get(resource_group_name, iot_hub_name)
+        iothub_description = client.iot_hub_resource.get(resource_group_name, iot_hub_name)
         # Retrieve the connection string
-        connection_string = iot_hub.properties.host_name
-        logging.info(f'IoT Hub connection string: {connection_string}')
-        return connection_string
+           # Extract the connection string from the IoT Hub description
+        for key in iothub_description.properties.authorization_policies:
+            if key.key_name == "iothubowner":
+                return key.primary_key
     except Exception as e:
-        logging.error(f'Error getting IoT Hub connection string with  default credential: {e}')
+        logging.error('Error getting IoT Hub connection string with default credential: %s', e)
         return None
 
 def get_device_twin_tags(iot_hub_connection_string, device_id):
@@ -89,12 +90,11 @@ def EventGridTrigger(azeventgrid: func.EventGridEvent):
         hubName = content.get('hubName')
         device_id = content.get('deviceId')
         logging.info(
-            'Device connected event received from device: %s', device_id)
+            'Device connected event received from iothub: %s device: %s' ,hubName, device_id)
     except (KeyError, ValueError) as e:
         logging.error('Error processing device connected event: %s', e)
         return
 
-  
     IOT_HUB_CONNECTION_STRING = get_iot_hub_connection_string(hubName, SUBSCRIPTION_ID, RG_NAME)
 
     if IOT_HUB_CONNECTION_STRING is None:
@@ -103,7 +103,7 @@ def EventGridTrigger(azeventgrid: func.EventGridEvent):
 
     try:
         tags = get_device_twin_tags(IOT_HUB_CONNECTION_STRING, device_id)
-        logging.info(f'Device twin tags: {tags}')
+        logging.info(f'Device twin {device_id} tags: {tags}')
 
         logging_on = tags.get("logging")
         if logging_on == "on":
@@ -112,4 +112,4 @@ def EventGridTrigger(azeventgrid: func.EventGridEvent):
                 hubName, os.environ["BLOB_ACCOUNT_URL"], device_id, "6", ".*", "0 days 15 minutes", "100")
             logging.info('Logs retrieval status: %s', status)
     except Exception as e:
-        logging.error(f'Error processing device twin tags: {e}')
+        logging.error(f'Error processing device twin tags: {e} for device: {device_id}')
