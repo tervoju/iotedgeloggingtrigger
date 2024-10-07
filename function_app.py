@@ -1,16 +1,21 @@
 import logging
 import os
+from datetime import datetime, timedelta
 import azure.functions as func
 from azure.identity import DefaultAzureCredential
 from azure.iot.hub import IoTHubRegistryManager
 from azure.mgmt.iothub import IotHubClient
-from azure.storage.blob import BlobServiceClient
+from azure.storage.blob import BlobServiceClient, ContainerSasPermissions
+from dev.dm_requests import IOT_HUB_CONNECTION_STRING
 from uploadlogs import upload_mi_module_logs_to_blob
 
 app = func.FunctionApp()
 
 SUBSCRIPTION_ID = 'ae92e392-3813-45dd-9c54-fe320939f03c'
 RG_NAME = 'rg-iotopc-tervo'
+BLOB_ACCOUNT_NAME = 'devtwineventhandler'
+BLOB_CONTAINER_NAME = 'edgemodulelogs'
+
 
 def get_iot_hub_connection_string(iot_hub_name, subscription_id, resource_group_name):
     """
@@ -26,12 +31,65 @@ def get_iot_hub_connection_string(iot_hub_name, subscription_id, resource_group_
         # Get the IoT Hub description
         iothub_description = client.iot_hub_resource.get(resource_group_name, iot_hub_name)
         # Retrieve the connection string
-           # Extract the connection string from the IoT Hub description
-        for key in iothub_description.properties.authorization_policies:
-            if key.key_name == "iothubowner":
-                return key.primary_key
+        # Get the shared access policies
+        policies = client.iot_hub_resource.list_keys(resource_group_name, iot_hub_name)
+
+        # Find the iothubowner policy
+        for policy in policies:
+            if policy.key_name == 'iothubowner':
+                logging.info(f"Policy Name: {policy.key_name}")
+                logging.info(f"Primary Key: {policy.primary_key}")
+                print(f"Secondary Key: {policy.secondary_key}")
+                logging.info(f"Rights: {policy.rights}")
+                return policy.primary_key
+    
+        logging.error('No authorization policies found for IoT Hub: %s', iot_hub_name)
+        return None
     except Exception as e:
         logging.error('Error getting IoT Hub connection string with default credential: %s', e)
+        return None
+    
+def get_blob_sas_token(account_url, container_name):
+    """
+    Get a SAS token for the blob.
+    """
+   
+    # Create a BlobServiceClient object using the connection string
+
+    # Generate a SAS token for the container with read permission
+    # The token expires in 1 hour, and is valid for 1 minute before expiration
+    # The start time is 1 minute before expiration to ensure that the token is valid for the duration of the request
+
+    # Note: Replace 'account_url' and 'container_name' with your actual blob storage account URL and container name
+
+    # Generate the SAS token for the blob container
+    # This token can be used to access blobs in the container with read permission
+
+    # The SAS token expires in 1 hour, and is valid for 1 minute before expiration
+    # The start time is 1 minute before expiration to ensure that the token is valid for the duration of the request
+
+    credential = DefaultAzureCredential()
+    logging.info(f"Getting SAS token for blob container {container_name}")
+
+    try:
+        # Use Managed Identity to authenticate with Azure Storage
+        credential = DefaultAzureCredential()
+        blob_service_client = BlobServiceClient(account_url=f"https://{account_name}.blob.core.windows.net", credential=credential)
+    
+        # Get the container client
+        container_client = blob_service_client.get_container_client(container_name)
+    
+        # Generate a SAS token for the blob
+        sas_token = container_client.generate_container_sas(
+            permission=ContainerSasPermissions(write=True),
+            expiry=datetime.now.datetime.utc() + timedelta(hours=1)
+        )
+        logging.info(f"SAS URL: {sas_token}")
+        # Construct the full URL to the blob including the SAS token
+        sas_url = f"https://{account_name}.blob.core.windows.net/{container_name}?{sas_token}"
+        return sas_url
+    except Exception as e:
+        logging.info("Error: %s", str(e))
         return None
 
 def get_device_twin_tags(iot_hub_connection_string, device_id):
@@ -91,25 +149,31 @@ def EventGridTrigger(azeventgrid: func.EventGridEvent):
         device_id = content.get('deviceId')
         logging.info(
             'Device connected event received from iothub: %s device: %s' ,hubName, device_id)
-    except (KeyError, ValueError) as e:
+    except Exception as e:
         logging.error('Error processing device connected event: %s', e)
         return
 
-    IOT_HUB_CONNECTION_STRING = get_iot_hub_connection_string(hubName, SUBSCRIPTION_ID, RG_NAME)
+    IOT_HUB_CONNECTION_KEY = get_iot_hub_connection_string(hubName, SUBSCRIPTION_ID, RG_NAME)
+    IOT_HUB_CONNECTION_STRING = f"HostName={hubName}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={IOT_HUB_CONNECTION_KEY}"
 
     if IOT_HUB_CONNECTION_STRING is None:
         logging.error('Failed to get IoT Hub connection string')
         return
+    
+    sas_url = get_blob_sas_token(BLOB_ACCOUNT_NAME, BLOB_CONTAINER_NAME)
+    if sas_url is None:
+        logging.error('Failed to get SAS URL for blob storage')
+        return
 
     try:
         tags = get_device_twin_tags(IOT_HUB_CONNECTION_STRING, device_id)
-        logging.info(f'Device twin {device_id} tags: {tags}')
+        logging.info('Device twin %s tags: %s', device_id, tags)
 
         logging_on = tags.get("logging")
         if logging_on == "on":
             logging.info(f'Device logging is enabled: {device_id}')
             status, payload = upload_mi_module_logs_to_blob(IOT_HUB_CONNECTION_STRING,
-                hubName, os.environ["BLOB_ACCOUNT_URL"], device_id, "6", ".*", "0 days 15 minutes", "100")
+                hubName, sas_url, device_id, "6", ".*", "0 days 15 minutes", "100")
             logging.info('Logs retrieval status: %s', status)
     except Exception as e:
         logging.error(f'Error processing device twin tags: {e} for device: {device_id}')

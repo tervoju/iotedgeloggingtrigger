@@ -171,4 +171,3 @@ if __name__ == "__main__":
 
     upload_module_logs_to_blob(iot_hub, sas_url, device_id, log_level, regex, since, tail)
     '''
-    print("This is the upload logs module")
