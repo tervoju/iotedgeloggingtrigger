@@ -76,7 +76,7 @@ def get_blob_sas_token(account_name, container_name):
         # Get the container client
         container_client = blob_service_client.get_container_client(container_name)
     
-        logging.info(f"container account key: {container_client.credentials.account_key}")
+        logging.info(f"container account key: {container_client.credential.account_key}")
         # Generate a SAS token for the blob
         sas_token = generate_container_sas(
             account_name=container_client.account_name,
